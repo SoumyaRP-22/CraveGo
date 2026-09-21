@@ -1,0 +1,221 @@
+/* ================================
+   CRAVEGO REGISTER PAGE
+================================ */
+
+.register-page {
+  min-height: 100vh;
+  width: 100%;
+  background: #fff5f8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: Arial, Helvetica, sans-serif;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Decorative circles */
+
+.register-page::before {
+  content: "";
+  position: absolute;
+  width: 430px;
+  height: 430px;
+  border-radius: 50%;
+  background: #ffd6e2;
+  top: -190px;
+  left: -170px;
+  opacity: 0.7;
+}
+
+.register-page::after {
+  content: "";
+  position: absolute;
+  width: 380px;
+  height: 380px;
+  border-radius: 50%;
+  background: #ffc1d4;
+  right: -170px;
+  bottom: -180px;
+  opacity: 0.6;
+}
+
+/* Register Card */
+
+.register-card {
+  width: 430px;
+  max-width: 90%;
+  background: white;
+  padding: 40px 42px;
+  border-radius: 25px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+  position: relative;
+  z-index: 2;
+}
+
+/* Logo */
+
+.register-logo {
+  text-align: center;
+  font-size: 34px;
+  font-weight: 800;
+  color: #171717;
+  margin-bottom: 25px;
+}
+
+.register-logo span {
+  color: #ff3f78;
+}
+
+/* Small heading */
+
+.register-label {
+  text-align: center;
+  color: #ff3f78;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  margin-bottom: 10px;
+}
+
+/* Main heading */
+
+.register-card h1 {
+  text-align: center;
+  font-size: 32px;
+  margin: 0;
+  color: #171717;
+}
+
+/* Description */
+
+.register-description {
+  text-align: center;
+  color: #777;
+  font-size: 14px;
+  line-height: 1.6;
+  margin: 12px 0 25px;
+}
+
+/* Input group */
+
+.input-group {
+  margin-bottom: 16px;
+}
+
+.input-group label {
+  display: block;
+  font-size: 14px;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 7px;
+}
+
+.input-group input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 13px 15px;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  outline: none;
+  font-size: 14px;
+  background: #fafafa;
+  transition: 0.3s;
+}
+
+.input-group input:focus {
+  border-color: #ff3f78;
+  background: white;
+  box-shadow: 0 0 0 3px rgba(255, 63, 120, 0.1);
+}
+
+/* Error */
+
+.register-error {
+  color: #e53935;
+  font-size: 13px;
+  margin: 5px 0 15px;
+}
+
+/* Register button */
+
+.register-submit {
+  width: 100%;
+  padding: 15px;
+  border: none;
+  border-radius: 12px;
+  background: #ff3f78;
+  color: white;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.3s;
+  margin-top: 5px;
+}
+
+.register-submit:hover {
+  background: #171717;
+  transform: translateY(-2px);
+}
+
+/* Login text */
+
+.login-text {
+  text-align: center;
+  color: #777;
+  font-size: 14px;
+  margin-top: 22px;
+}
+
+.login-link {
+  border: none;
+  background: none;
+  color: #ff3f78;
+  font-weight: 700;
+  cursor: pointer;
+  font-size: 14px;
+  margin-left: 5px;
+}
+
+.login-link:hover {
+  text-decoration: underline;
+}
+
+/* Back button */
+
+.back-button {
+  display: block;
+  margin: 18px auto 0;
+  border: none;
+  background: none;
+  color: #555;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.back-button:hover {
+  color: #ff3f78;
+}
+
+/* ================================
+   RESPONSIVE
+================================ */
+
+@media (max-width: 500px) {
+
+  .register-card {
+    padding: 32px 24px;
+  }
+
+  .register-card h1 {
+    font-size: 27px;
+  }
+
+  .register-logo {
+    font-size: 30px;
+  }
+
+  .register-description {
+    font-size: 13px;
+  }
+}

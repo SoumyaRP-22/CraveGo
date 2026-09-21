@@ -1,122 +1,89 @@
-import { useState } from 'react'
-import heroImg from './assets/hero.png'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import './App.css'
+import { useState } from "react";
+
+import Landing from "./pages/Landing";
+import Welcome from "./pages/Welcome";
+import Login from "./pages/Login";
+import Register from "./pages/Register";
+import OTP from "./pages/OTP";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [page, setPage] = useState("landing");
 
-  return (
-    <>
-      <section id="center">
-        <div className="hero">
-          <img src={heroImg} className="base" width="170" height="179" alt="" />
-          <img src={reactLogo} className="framework" alt="React logo" />
-          <img src={viteLogo} className="vite" alt="Vite logo" />
-        </div>
-        <div>
-          <h1>Get started</h1>
-          <p>
-            Edit <code>src/App.jsx</code> and save to test <code>HMR</code>
-          </p>
-        </div>
-        <button
-          type="button"
-          className="counter"
-          onClick={() => setCount((count) => count + 1)}
-        >
-          Count is {count}
-        </button>
-      </section>
+  // INTRO
+  if (page === "landing") {
+    return (
+      <Landing
+        onExplore={() => setPage("welcome")}
+      />
+    );
+  }
 
-      <div className="ticks"></div>
+  // WELCOME
+  if (page === "welcome") {
+    return (
+      <Welcome
+        onLogin={() => setPage("login")}
+        onRegister={() => setPage("register")}
+      />
+    );
+  }
 
-      <section id="next-steps">
-        <div id="docs">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#documentation-icon"></use>
-          </svg>
-          <h2>Documentation</h2>
-          <p>Your questions, answered</p>
-          <ul>
-            <li>
-              <a href="https://vite.dev/" target="_blank">
-                <img className="logo" src={viteLogo} alt="" />
-                Explore Vite
-              </a>
-            </li>
-            <li>
-              <a href="https://react.dev/" target="_blank">
-                <img className="button-icon" src={reactLogo} alt="" />
-                Learn more
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div id="social">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#social-icon"></use>
-          </svg>
-          <h2>Connect with us</h2>
-          <p>Join the Vite community</p>
-          <ul>
-            <li>
-              <a href="https://github.com/vitejs/vite" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#github-icon"></use>
-                </svg>
-                GitHub
-              </a>
-            </li>
-            <li>
-              <a href="https://chat.vite.dev/" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#discord-icon"></use>
-                </svg>
-                Discord
-              </a>
-            </li>
-            <li>
-              <a href="https://x.com/vite_js" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#x-icon"></use>
-                </svg>
-                X.com
-              </a>
-            </li>
-            <li>
-              <a href="https://bsky.app/profile/vite.dev" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#bluesky-icon"></use>
-                </svg>
-                Bluesky
-              </a>
-            </li>
-          </ul>
-        </div>
-      </section>
+  // LOGIN
+  if (page === "login") {
+    return (
+      <Login
+        onBack={() => setPage("welcome")}
+        onRegister={() => setPage("register")}
+        onLoginSuccess={() => setPage("otp")}
+      />
+    );
+  }
 
-      <div className="ticks"></div>
-      <section id="spacer"></section>
-    </>
-  )
+  // REGISTER
+  if (page === "register") {
+    return (
+      <Register
+        onBack={() => setPage("welcome")}
+        onLogin={() => setPage("login")}
+        onRegisterSuccess={() => setPage("otp")}
+      />
+    );
+  }
+
+  // OTP
+  if (page === "otp") {
+    return (
+      <OTP
+        onBack={() => setPage("welcome")}
+        onVerify={() => setPage("home")}
+      />
+    );
+  }
+
+  // TEMPORARY HOME
+  if (page === "home") {
+    return (
+      <div
+        style={{
+          minHeight: "100vh",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          background: "#fff5f8",
+          fontFamily: "Arial",
+        }}
+      >
+        <h1>
+          Welcome to{" "}
+          <span style={{ color: "#ff3f78" }}>
+            CraveGo
+          </span>
+        </h1>
+      </div>
+    );
+  }
+
+  return null;
 }
 
-export default App
+export default App;

@@ -1,0 +1,238 @@
+/* ================================
+   CRAVEGO OTP VERIFICATION
+================================ */
+
+.otp-page {
+  min-height: 100vh;
+  width: 100%;
+  background: #fff5f8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: Arial, Helvetica, sans-serif;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Decorative circles */
+
+.otp-page::before {
+  content: "";
+  position: absolute;
+  width: 430px;
+  height: 430px;
+  border-radius: 50%;
+  background: #ffd6e2;
+  top: -190px;
+  left: -170px;
+  opacity: 0.7;
+}
+
+.otp-page::after {
+  content: "";
+  position: absolute;
+  width: 380px;
+  height: 380px;
+  border-radius: 50%;
+  background: #ffc1d4;
+  right: -170px;
+  bottom: -180px;
+  opacity: 0.6;
+}
+
+/* Card */
+
+.otp-card {
+  width: 430px;
+  max-width: 90%;
+  background: white;
+  padding: 42px;
+  border-radius: 25px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+  position: relative;
+  z-index: 2;
+  text-align: center;
+}
+
+/* Logo */
+
+.otp-logo {
+  font-size: 34px;
+  font-weight: 800;
+  color: #171717;
+  margin-bottom: 25px;
+}
+
+.otp-logo span {
+  color: #ff3f78;
+}
+
+/* Icon */
+
+.otp-icon {
+  width: 65px;
+  height: 65px;
+  margin: 0 auto 18px;
+  border-radius: 50%;
+  background: #ffe1ea;
+  color: #ff3f78;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+}
+
+/* Label */
+
+.otp-label {
+  color: #ff3f78;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  margin-bottom: 10px;
+}
+
+/* Heading */
+
+.otp-card h1 {
+  font-size: 30px;
+  color: #171717;
+  margin: 0;
+}
+
+/* Description */
+
+.otp-description {
+  color: #777;
+  font-size: 14px;
+  line-height: 1.6;
+  margin: 15px auto 28px;
+  max-width: 350px;
+}
+
+/* OTP inputs */
+
+.otp-inputs {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+
+.otp-inputs input {
+  width: 48px;
+  height: 55px;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  background: #fafafa;
+  text-align: center;
+  font-size: 22px;
+  font-weight: 700;
+  outline: none;
+  transition: 0.3s;
+}
+
+.otp-inputs input:focus {
+  border-color: #ff3f78;
+  background: white;
+  box-shadow: 0 0 0 3px rgba(255, 63, 120, 0.1);
+}
+
+/* Error */
+
+.otp-error {
+  color: #e53935;
+  font-size: 13px;
+  margin: 5px 0 15px;
+}
+
+/* Verify button */
+
+.verify-button {
+  width: 100%;
+  padding: 15px;
+  border: none;
+  border-radius: 12px;
+  background: #ff3f78;
+  color: white;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.verify-button:hover {
+  background: #171717;
+  transform: translateY(-2px);
+}
+
+/* Resend */
+
+.resend-section {
+  margin-top: 22px;
+  color: #777;
+  font-size: 14px;
+}
+
+.resend-section span {
+  color: #ff3f78;
+  font-weight: 700;
+}
+
+.resend-button {
+  border: none;
+  background: none;
+  color: #ff3f78;
+  font-weight: 700;
+  cursor: pointer;
+  margin-left: 5px;
+  font-size: 14px;
+}
+
+.resend-button:hover {
+  text-decoration: underline;
+}
+
+/* Back */
+
+.otp-back {
+  margin-top: 18px;
+  border: none;
+  background: none;
+  color: #555;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.otp-back:hover {
+  color: #ff3f78;
+}
+
+/* ================================
+   RESPONSIVE
+================================ */
+
+@media (max-width: 500px) {
+
+  .otp-card {
+    padding: 32px 22px;
+  }
+
+  .otp-card h1 {
+    font-size: 26px;
+  }
+
+  .otp-logo {
+    font-size: 30px;
+  }
+
+  .otp-inputs {
+    gap: 6px;
+  }
+
+  .otp-inputs input {
+    width: 42px;
+    height: 50px;
+    font-size: 20px;
+  }
+}
